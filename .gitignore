@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/base-apparel-coming-soon-master
 
 # Node
 /node_modules

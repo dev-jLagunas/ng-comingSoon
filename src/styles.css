@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Settings  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Global Varibles */
+:root {
+  --gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
