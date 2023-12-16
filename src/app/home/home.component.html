@@ -1,1 +1,74 @@
-<p>home works!</p>
+<section class="h-screen w-screen">
+  <main
+    class="flex flex-col justify-center sm:grid sm:grid-cols-5 sm:grid-rows-4 sm:h-screen"
+  >
+    <div
+      class="ml-8 py-8 sm:row-start-1 sm:col-start-2 sm:col-end-3 sm:mt-24 sm:ml-3"
+    >
+      <img src="/assets/svgs/logo.svg" alt="Brand Logo" class="h-6" />
+    </div>
+    <div class="sm:col-start-4 sm:col-end-6 sm:row-span-5">
+      <img
+        src="/assets/images/hero-mobile.jpg"
+        alt="Model Image"
+        class="h-full w-full object-cover sm:hidden"
+      />
+      <img
+        src="/assets/images/hero-desktop.jpg"
+        alt="Model Image"
+        class="h-full w-full object-center hidden sm:block"
+      />
+    </div>
+    <div
+      class="mx-auto text-center mt-7 sm:col-start-2 sm:col-end-2 sm:row-start-2 sm:text-start sm:mx-0"
+    >
+      <p
+        class="text-5xl text-desaturated-red tracking-widest font-extralight sm:text-6xl 2xl:text-6xl"
+      >
+        WE'RE
+      </p>
+      <p class="text-5xl text-slate-700 tracking-widest sm:text-6xl">COMING</p>
+      <p class="text-5xl text-slate-700 tracking-widest sm:text-6xl">SOON</p>
+    </div>
+    <div
+      class="text-desaturated-red px-8 text-center text-sm my-2 sm:row-start-3 sm:col-start-2 sm:col-end-4 sm:mt-10 sm:px-0 sm:text-start lg:pr-32 sm:text-base 2xl:text-lg"
+    >
+      <p>
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our
+        launch deals.
+      </p>
+    </div>
+    <div
+      class="border border-slate-700 border-opacity-20 w-3/4 rounded-3xl mx-auto pl-4 relative sm:row-start-4 sm:col-start-2 sm:h-max sm:w-max sm:-mt-4 lg:w-96"
+      [class.invalid-email]="!isEmailValid"
+    >
+      <form
+        #myForm="ngForm"
+        (ngSubmit)="onSubmit(myForm)"
+        class="flex justify-between"
+      >
+        <input
+          type="email"
+          placeholder="Email Address"
+          [(ngModel)]="userEmail"
+          name="userEmail"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+          required
+          class="placeholder-custom-color w-full focus:outline-none"
+          #emailInput="ngModel"
+        />
+        <div
+          class="items-center mr-2"
+          [hidden]="isEmailValid"
+          [class.error-message]="!isEmailValid"
+        >
+          <img src="/assets/svgs/icon-error.svg" alt="" />
+        </div>
+        <button type="submit" class="h-10 w-14 rounded-3xl custom-gradient">
+          <i class="fa-solid fa-chevron-right text-white"></i>
+        </button>
+      </form>
+    </div>
+  </main>
+</section>
